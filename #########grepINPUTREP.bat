@@ -44,7 +44,8 @@ echo off
 ::for %%1 in ("*.txt") do  find /c "%name%" "%%1" >nul  && ( echo %%~n1) 
 
 ::for %%1 in ("*.txt") do  grep "%name%" "%%1" >nul  && ( echo %%~n1) 
-for /R %%1 in ("*.txt") do grep "%name%" "%%1" >nul  && ( echo %%~n1) 
+::for /R %%1 in ("*.txt") do grep "%name%" "%%1" >nul  && ( echo %%~d1%%~p1%%~n1.epub) 
+for /R %%1 in ("*.txt") do grep "%name%" "%%1" >nul  && ( xcopy "%%~d1%%~p1%%~n1.*" c:\COPY1) 
 pause
 
  
